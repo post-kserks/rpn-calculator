@@ -1,0 +1,6 @@
+PROJECT_NAME = "RPN Calculator"
+o INPUT = include src
+o RECURSIVE = YES
+o EXTRACT_ALL = YES
+o GENERATE_HTML = YES
+o HAVE_DOT = YES
