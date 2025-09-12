@@ -13,11 +13,11 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y cmake g++ libgtest-dev
+        sudo apt-get install -y cmake g++ git
 
     - name: Configure CMake
       run: |
-        rm -rf build  # Очищаем перед конфигурацией
+        rm -rf build
         cmake -B build
 
     - name: Build
