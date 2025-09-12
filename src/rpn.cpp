@@ -32,10 +32,22 @@ double evaluate_rpn(const std::string& expression) {
             stack.push(a - b);
         }
         else if (token == "*") {
-            // ... реализуйте умножение
+            // Реализация умножения
+            if (stack.size() < 2) throw std::invalid_argument("Not enough operands for '*'");
+            double b = stack.top(); stack.pop();
+            double a = stack.top(); stack.pop();
+            stack.push(a * b);
         }
         else if (token == "/") {
-            // ... реализуйте деление с проверкой на ноль
+            // Реализация деления с проверкой на ноль
+            if (stack.size() < 2) throw std::invalid_argument("Not enough operands for '/'");
+            double b = stack.top(); stack.pop();
+            double a = stack.top(); stack.pop();
+
+            if (b == 0.0) {
+                throw std::invalid_argument("Division by zero");
+            }
+            stack.push(a / b);
         }
         else {
             throw std::invalid_argument("Invalid token: " + token);
